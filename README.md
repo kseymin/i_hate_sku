@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ruby: 2.5.0
+rails: 5.1.5
 
-Things you may want to cover:
+model name: Db
+-reason
+-like
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+view
+index
+    -main
+    -top_rank
+    -rank_table
+    -footer
+    

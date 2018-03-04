@@ -2,6 +2,12 @@ class HomeController < ApplicationController
   def index
     @post = Db.all
 
+    @top_rank = Db.order(like: :desc).limit(3)
+    @rank = (Db.order(like: :desc).limit(20)) - (@top_rank)
+
+    @num = [*4..20]
+    @color = ['gold', 'silver', 'bronze']
+
   end
 
   def create
