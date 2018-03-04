@@ -1,9 +1,9 @@
 class HomeController < ApplicationController
   def index
-    @post = Db.all
+    @post = Db.paginate(:page => params[:page]).order('created_at DESC')
 
     @top_rank = Db.order(like: :desc).limit(3)
-    @rank = (Db.order(like: :desc).limit(20)) - (@top_rank)
+    @rank = (Db.order(like: :desc).limit(15)) - (@top_rank)
 
     @color = ['gold', 'silver', '#cd7f32;']
 
@@ -24,11 +24,6 @@ class HomeController < ApplicationController
     @new_post.save
 
     redirect_to root_path
-  end
-
-  def rank
-
-
   end
 
 end

@@ -1,0 +1,21 @@
+<div class="container">
+  <h4 class="text-center mt-4">순위 밖</h4>
+  <p class="text-center text-secondary">(최근에 등록된 순으로 정렬됩니다.)</p>
+
+  <% @post.each do |x| %>
+    <div class="card my-1">
+      <div class="card-body">
+        <p class="card-text text-secondary"><%= x.created_at.strftime("%m월 %d일 %H시%M분") %></p>
+        <h5 class="card-title like"><%= x.reason %></h5>
+        <div class="float-right">
+          <a href="/like/<%= x.id %>" class="like"><i class="fas fa-thumbs-up fa-2x"></i></a>
+          <p class="like">공감수: <%= x.like %>개</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="apple_pagination">
+    <%= will_paginate @post, :container => false %>
+  </div>
+</div>
