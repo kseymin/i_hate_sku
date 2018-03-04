@@ -7,6 +7,7 @@ class HomeController < ApplicationController
 
     @num = [*4..20]
     @color = ['gold', 'silver', 'bronze']
+    @top_num = [*1..3]
 
   end
 
