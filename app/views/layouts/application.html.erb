@@ -22,9 +22,12 @@
 
     <!--Typing Animation-->
     <script>
+        var datadump = $('.temp_information').data('temp');
+
+
         $(function() {
             $(".typed").typed({
-                strings: ["멋쟁이 사자처럼", "고인물 박영조", "학식에서 철수세미가 나왔기"],
+                strings: [datadump[0].reason, datadump[1].reason,datadump[2].reason],
                 typeSpeed: 150,
                 loop: true
             });
