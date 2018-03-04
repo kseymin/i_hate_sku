@@ -18,13 +18,13 @@ class HomeController < ApplicationController
 
   def like_input_db
 
-    if @cookies.nil?
+   # if @cookies.nil?
     @input = Db.find(params[:id])
     @input.like += 1
     @input.save
-    end
+    #end
 
-    @cookies = cookies[:login] = { :value => "test", :expires => Time.now + 3600}
+    #@cookies = cookies[:login] = { :value => "test", :expires => Time.now + 3600}
     redirect_to '/home/index'
   end
 
