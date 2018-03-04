@@ -1,7 +1,7 @@
 <div class="container">
   <h3 class="text-center my-4">랭킹</h3>
   <div class="row">
-    <% @top_rank.each do |card|%>
+    <% @top_rank.each_with_index do |card, index, color|%>
       <div class="col-sm-12 col-md-4">
         <div class="card mx-auto">
           <div class="card-body">
@@ -10,12 +10,12 @@
                 <i class="fa fa-trophy fa-stack-2x" style="color:<%= @fuck %>;"></i>
                 <span class="fa fa-stack-1x" style="color:white;">
                   <span style="font-size:20px; margin-top:-7px; margin-left:5.5px; display:block;">
-                    <%= @fuck %>
+                    <%= index+1 %>
                   </span>
                 </span>
               </span>
             </h5>
-            <h6 class="card-subtitle mb-2 text-muted">성결대가 싫은 이유 <%= @fuck %>위</h6>
+            <h6 class="card-subtitle mb-2 text-muted">성결대가 싫은 이유 <%= index+1 %>위</h6>
             <h4 class="card-text text-center my-4"><%= card.reason %></h4>
             <a href="/like/<%= card.id %>" class="like"><i class="fas fa-thumbs-up fa-2x"></i></a>
             <p class="like">공감수: <%= card.like %>개</p>
