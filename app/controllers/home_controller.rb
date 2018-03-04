@@ -5,9 +5,7 @@ class HomeController < ApplicationController
     @top_rank = Db.order(like: :desc).limit(3)
     @rank = (Db.order(like: :desc).limit(20)) - (@top_rank)
 
-    @num = [*4..20]
-    @color = ['gold', 'silver', 'bronze']
-    @top_num = [*1..3]
+    @color = ['gold', 'silver', '#cd7f32;']
 
   end
 
