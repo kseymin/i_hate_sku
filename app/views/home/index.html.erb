@@ -1,37 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>fucking test</title>
-</head>
-<body>
-<br>
+<%= render "main" %>
 
-<form action="/input_db" method="post">
-    reason: <input type="string" name="reason"><br>
-
-    <input type="submit" value="Submit">
-</form>
-
-<br>
-
-<table style="width:100%">
-    <tr>
-        <th>reason</th>
-        <th>like</th>
-        <th>button</th>
-
-    </tr>
-  <% @input.each do |i| %>
-    <tr>
-        <td> <%= i.id %></td>
-        <td id="reason"> <%= i.reason %> </td>
-        <td> <%= i.like %> </td>
-      <td><a href="/like_input_db/<%= i.id %>" >like</a></td>
-    </tr>
-  <% end %>
-  </table>
+<!--Ranking top 3-->
+<%= render "top_rank" %>
 
 
-</body>
-</html>
+<!--Ranking Table-->
+<%= render "rank_table" %>
+
+<div class="container">
+  <a href="#"><h6 class="text-center">전체 랭킹 보기</h6></a>
+</div>
+
+<!--footer-->
+<%= render "footer" %>

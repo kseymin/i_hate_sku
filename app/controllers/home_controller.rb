@@ -1,41 +1,29 @@
 class HomeController < ApplicationController
   def index
-    @input = Db.all
+    @post = Db.all
 
   end
 
-#private
+  def create
+    @new_post = Db.new
+    @new_post.reason = params[:reason]
+    @new_post.like = 0
+    @new_post.save
 
-  def input_db
-    @input = Db.new
-    @input.reason = params[:reason]
-    @input.like = 0
-    @input.save
-    redirect_to '/home/index'
+    redirect_to root_path
   end
 
+  def like
+    @new_post = Db.find(params[:id])
+    @new_post.like += 1
+    @new_post.save
 
-
-  def like_input_db
-
-   # if @cookies.nil?
-    @input = Db.find(params[:id])
-    @input.like += 1
-    @input.save
-    #end
-
-    #@cookies = cookies[:login] = { :value => "test", :expires => Time.now + 3600}
-    redirect_to '/home/index'
+    redirect_to root_path
   end
 
-=begin
-  def read_rank
-   # 랭크 가져오기
-  end
+  def rank
 
-  def read_news
-   # 최신순 가져오기
+
   end
-=end
 
 end

@@ -1,0 +1,20 @@
+<div class="container mt-3">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">순위</th>
+        <th scope="col">이유</th>
+        <th scope="col">공감수</th>
+      </tr>
+    </thead>
+  </table>
+  <tbody>
+  <%= @rank.each do |t| %>
+    <tr>
+      <th scope="row"><%= t.num %></th>
+      <td><%= t.reason %></td>
+      <td><a href="#" class="like"><i class="fas fa-thumbs-up fa-2x"></i></a> <%= t.like %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</div>

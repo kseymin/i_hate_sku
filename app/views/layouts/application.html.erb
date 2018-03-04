@@ -6,9 +6,42 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!--CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+
+    <!--font awesome-->
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+
+    <script src='javascripts/typed.min.js'></script>
+
+    <!--모바일 사이즈-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
   <body>
     <%= yield %>
+
+    <!--Typing Animation-->
+    <script>
+        $(function() {
+            $(".typed").typed({
+                strings: ["멋쟁이 사자처럼", "고인물 박영조", "학식에서 철수세미가 나왔기"],
+                typeSpeed: 150,
+                loop: true
+            });
+        });
+
+        //text-counter JS
+        $(function() {
+            $('#content').keyup(function (e){
+                var content = $(this).val();
+                $(this).height(((content.split('\n').length + 1) * 1.5) + 'em');
+                $('#counter').html(content.length + '/14');
+            });
+            $('#content').keyup();
+        });
+
+    </script>
   </body>
 </html>

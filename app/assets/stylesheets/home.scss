@@ -1,3 +1,89 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+* {
+  /* border: 1px solid black; */
+}
+
+.main-container {
+  background-color: #0D47A1;
+}
+.row-main {
+  padding-top: 10vh;
+  height: 70vh;
+}
+
+.main-content {
+  height: 100%;
+}
+
+.main-content > div {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-content-text h1 {
+  text-align: center;
+  color: white;
+  font-family: 'Nanum Brush Script', cursive;
+  font-size: 4rem;
+}
+
+.main-content-input {
+  /*padding-top: 10vh;*/
+  position: absolute;
+  bottom: 10vh;
+  /*left: 10%;*/
+}
+
+.main-form {
+  width: 100%;
+}
+
+.main-form input {
+  width: 70% !important;
+  height: 3em !important;
+}
+
+.main-form {
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.typed {
+  border-bottom: 4px solid #ffffff;
+}
+
+.typed-cursor {
+  color: #0D47A1;
+}
+
+.typed-color {
+  color: yellow;
+}
+
+/*버튼색수정*/
+.btn-content {
+  color: white !important;
+  border-color: white !important;
+  height: 3em !important;
+}
+
+.btn-content:hover{
+  color: #0e5bab !important;
+  background-color: #fff !important;
+  border-color: #0e5bab !important;
+  height: 3em !important;
+}
+
+.like {
+  display: inline-block;
+}
+
+.text-counter {
+  margin-left: 60px;
+  color: yellow;
+}
